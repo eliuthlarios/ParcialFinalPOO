@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="480.0" prefWidth="854.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.parcialfinalpoo.controllers.AgregarTarjetaController">
+   <children>
+      <BorderPane prefHeight="480.0" prefWidth="854.0">
+         <center>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label text="Agregar Tarjeta">
+                     <font>
+                        <Font size="24.0" />
+                     </font></Label>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="50.0">
+                     <children>
+                        <Label text="Numero de la tarjeta: " />
+                        <TextField fx:id="txtFieldNumeroTarjeta1" prefWidth="250.0" />
+                     </children>
+                     <padding>
+                        <Insets left="30.0" />
+                     </padding>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="55.0">
+                     <children>
+                        <Label text="Fecha de expiracion: " />
+                        <TextField fx:id="txtFieldExpiracionTarjeta" prefWidth="250.0" />
+                     </children>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                     <padding>
+                        <Insets left="30.0" />
+                     </padding>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="87.0">
+                     <children>
+                        <Label text="Tipo de tarjeta: " />
+                        <TextField fx:id="txtFieldTipoTarjeta" prefWidth="250.0" />
+                     </children>
+                     <padding>
+                        <Insets left="30.0" />
+                     </padding>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="117.0">
+                     <children>
+                        <Label text="Facilitador:" />
+                        <TextField fx:id="txtFacilitador" prefWidth="250.0" />
+                     </children>
+                     <padding>
+                        <Insets left="30.0" />
+                     </padding>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="50.0">
+                     <children>
+                        <Button fx:id="btnAgregar2" mnemonicParsing="false" text="Agregar">
+                           <font>
+                              <Font size="18.0" />
+                           </font></Button>
+                        <Button fx:id="btnSalir10" mnemonicParsing="false" text="Salir">
+                           <font>
+                              <Font size="18.0" />
+                           </font></Button>
+                     </children>
+                  </HBox>
+               </children>
+               <padding>
+                  <Insets bottom="20.0" top="20.0" />
+               </padding>
+            </VBox>
+         </center></BorderPane>
+   </children>
+</AnchorPane>
