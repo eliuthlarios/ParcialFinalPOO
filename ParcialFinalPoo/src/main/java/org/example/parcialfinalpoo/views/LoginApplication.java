@@ -3,7 +3,9 @@ package org.example.parcialfinalpoo.views;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.stage.Stage;
+import org.example.parcialfinalpoo.model.Authentication;
 
 import java.io.IOException;
 
