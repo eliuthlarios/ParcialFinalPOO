@@ -2,7 +2,6 @@ package org.example.parcialfinalpoo.controllers;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
@@ -13,56 +12,57 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
+import static org.example.parcialfinalpoo.AlertControllers.MostrarError;//00106423 Importamos la clase abstracta AlertControlles y su funcion static MostrarError
 
-public class AgregarClienteController { //00103923 Declara la clase AgregarClienteController
+public class AgregarClienteController {//00103923 Declara la clase AgregarClienteController
     @FXML
-    private TextField txtFieldNombreCliente2; //00103923 Declara el text field btnSalir10
+    private TextField txtFieldNombreCliente2;//00103923 Declara el text field btnSalir10
     @FXML
-    private TextArea txtAreaDireccion1; //00103923 Declara el text field btnSalir10
+    private TextArea txtAreaDireccion1;//00103923 Declara el text field btnSalir10
     @FXML
-    private TextField txtFieldTelefono1; //00103923 Declara el text field btnSalir10
+    private TextField txtFieldTelefono1;//00103923 Declara el text field btnSalir10
     @FXML
-    private Button btnAgregar1; //00103923 Declara el boton btnSalir10
+    private Button btnAgregar1;//00103923 Declara el boton btnSalir10
     @FXML
-    private Button btnSalir6; //00103923 Declara el boton btnSalir10
-    @FXML
-    private Alert error=new Alert(Alert.AlertType.ERROR);//00106423 Creamos un objeto Alert para mostrar posibles errores
+    private Button btnSalir6;//00103923 Declara el boton btnSalir10
 
     @FXML
-    public void agregarOnAction(ActionEvent event) { //00103923 Declara el metodo void agregarOnAction que recibe de parametros un event
+    public void agregarOnAction(ActionEvent event) throws SQLException {//00103923 Declara el metodo void agregarOnAction que recibe de parametros un event
 
-        String SQL_query="insert into Clientes(NombreCompleto,Direccion,NumeroTelefono) values(?,?,?)";//00106423 Escribimos la query que agregara los clientes a la BD
-        String NombreCompleto=txtFieldNombreCliente2.getText();//00106423 Guardamos en una variable el valor del textField que recibe el nombre completo del usuario
-        String Direccion=txtAreaDireccion1.getText();//00106423 Guardamos en una variable el valor del textField que recibe la direccion del usuario
-        String NumeroTelefono=txtFieldTelefono1.getText();//00106423 Guardamos en una variable el valor del textField que recibe el numero de telefono del usuario
+        String nombreCompleto = txtFieldNombreCliente2.getText();//00106423 Guardamos en una variable el valor del textField que recibe el nombre completo del usuario
+        String direccion = txtAreaDireccion1.getText();//00106423 Guardamos en una variable el valor del textField que recibe la direccion del usuario
+        String numeroTelefono = txtFieldTelefono1.getText();//00106423 Guardamos en una variable el valor del textField que recibe el numero de telefono del usuario
 
-        try{//00106423 Hacemos las manipulaciones de la BD dentro de un bloque try-catch
-            Connection conn= BDConection.getConnection();//00106423 Establecemos coneccion con la BD
-            PreparedStatement pstm=conn.prepareStatement(SQL_query);//00106423 Preparamos la query
-            pstm.setString(1,NombreCompleto);//00106423 Establecemos el valor del nombre completo con el valor que capturamos del text field
-            pstm.setString(2,Direccion);//00106423 Establecemos el valor de la dirrecion con el valor que capturamos del text field
-            pstm.setString(3,NumeroTelefono);//00106423 Establecemos el valor del numero de telefono con el valor que capturamos del text field
+        if (nombreCompleto.isEmpty() || direccion.isEmpty() || numeroTelefono.isEmpty()) {//00106423 Hacemos un if para verificar que se han rellenado todos los datos solicitados
+            MostrarError("ERROR AL AGREGAR CLIENTE", "RELLENA LOS CAMPOS SOLICITADOS");//00106423 Hacemos uso de la funcion importada MostrarError
+            return;//00106423 Salimos del metodo
+        }
+
+        String SQL_query = "INSERT INTO Clientes(NombreCompleto, Direccion, NumeroTelefono) VALUES(?, ?, ?)";//00106423 Escribimos la query que agregara los clientes a la BD
+
+        try (Connection conn = BDConection.getConnection();//00106423 En un bloque try-catch manipulamos la BD y abrimos la coneccion
+             PreparedStatement pstm = conn.prepareStatement(SQL_query)) {//00106423 Le pasamos la query
+
+            //00106423 Agregamos los datos escritos por el usuario en los text labels a la query
+            pstm.setString(1, nombreCompleto);
+            pstm.setString(2, direccion);
+            pstm.setString(3, numeroTelefono);
             pstm.executeUpdate();//00106423 Ejecutamos la query
 
-            if(NombreCompleto.isEmpty() || Direccion.isEmpty() || NumeroTelefono.isEmpty() ) {//00106423 Iniciamos un if para verificar que el usuario efectivamente digito datos
-                error.setTitle("ERROR");
-                error.setHeaderText("ERROR AL AGREGAR CLIENTE");
-                error.setContentText("VERIFICA QUE LOS DATOS AGREGADOS SEAN VALIDOS");
-                error.showAndWait();
-            }
-            else{//00106423 Mostramos la ventana de exito si el cliente se agrego correctamente a la BD
-                ((Stage)btnAgregar1.getScene().getWindow()).close(); //00103923 Cierra escena actual
-                SceneManager.manageScene(event, "/org/example/parcialfinalpoo/operacion-exitosa.fxml"); //00103923 Cambia la escena usando SceneManager
+            ((Stage) btnAgregar1.getScene().getWindow()).close();//00103923 Cierra escena actual
+            SceneManager.manageScene(event, "/org/example/parcialfinalpoo/operacion-exitosa.fxml");
 
-            }
-        } catch (SQLException e) {//00106423 Si algo falla durante la ejecucion lanzamos una excepcion con el catch
-            throw new RuntimeException(e);
+        } catch (SQLException e) {//00106423 Notificamos al usuario de posibles errores
+            MostrarError("ERROR AL AGREGAR CLIENTE", "INTENTA NUEVAMENTE");
+        } finally {
+            BDConection.closeConnection();//00106423 Cerramos la coneccion despues de Agregar el cliente
         }
 
     }
     @FXML
-    public void btnSalir6OnAction(ActionEvent event) { //00103923 Declara el metodo void btnSalir6OnAction que recibe de parametros un event
-        ((Stage)btnSalir6.getScene().getWindow()).close(); //00103923 Cierra escena actual
-        SceneManager.manageScene(event, "/org/example/parcialfinalpoo/menu-empleado.fxml"); //00103923 Cambia la escena usando SceneManager
+    public void btnSalir6OnAction(ActionEvent event) {//00103923 Declara el metodo void btnSalir6OnAction que recibe de parametros un event
+        ((Stage)btnSalir6.getScene().getWindow()).close();//00103923 Cierra escena actual
+        SceneManager.manageScene(event, "/org/example/parcialfinalpoo/menu-empleado.fxml");//00103923 Cambia la escena usando SceneManager
     }
+
 }
