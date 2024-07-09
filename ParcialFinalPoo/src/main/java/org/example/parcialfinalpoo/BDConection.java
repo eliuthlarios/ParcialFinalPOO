@@ -6,7 +6,7 @@ import java.sql.SQLException;
 
 public class BDConection {
 
-    private static final String URL = "jdbc:sqlserver://LAPTOP-7DJHODDN\\MSSQLSERVER16:1433;databaseName=BancoBCN2024;integratedSecurity=true;encrypt=false;";
+    private static final String URL = "jdbc:sqlserver://NombreDeTuPC\\MSSQLSERVER16:1433;databaseName=BancoBCN2024;integratedSecurity=true;encrypt=false;";
     private static Connection connection = null;
 
     private BDConection() {
