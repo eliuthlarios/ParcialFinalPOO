@@ -32,7 +32,7 @@
                               <Font size="18.0" />
                            </font>
                         </Label>
-                        <TextField fx:id="txtFieldPassword" />
+                        <PasswordField fx:id="pfPassword" />
                      </children>
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="50.0">

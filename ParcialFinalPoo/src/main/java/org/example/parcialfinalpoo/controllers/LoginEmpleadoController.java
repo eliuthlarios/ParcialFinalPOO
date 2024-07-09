@@ -4,6 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import org.example.parcialfinalpoo.SceneManager;
@@ -13,7 +14,7 @@ public class LoginEmpleadoController {
     @FXML
     private TextField txtFieldUser;
     @FXML
-    private TextField txtFieldPassword;
+    private PasswordField pfPassword;
     @FXML
     private Button btnIngresar;
     @FXML
@@ -22,7 +23,7 @@ public class LoginEmpleadoController {
     @FXML
     public void ingresar(ActionEvent event) {
         try {
-            if (Authentication.authenticate(txtFieldUser.getText(), txtFieldPassword.getText())) {
+            if (Authentication.authenticate(txtFieldUser.getText(), pfPassword.getText())) {
                 ((Stage) btnIngresar.getScene().getWindow()).close(); // Cierra escena actual
                 SceneManager.manageScene(event, "/org/example/parcialfinalpoo/menu-empleado.fxml");
             } else {
