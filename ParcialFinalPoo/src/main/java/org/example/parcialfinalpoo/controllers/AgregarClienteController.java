@@ -9,28 +9,27 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import org.example.parcialfinalpoo.BDConection;
 import org.example.parcialfinalpoo.SceneManager;
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.Objects;
 
-public class AgregarClienteController {
+
+public class AgregarClienteController { //00103923 Declara la clase AgregarClienteController
     @FXML
-    private TextField txtFieldNombreCliente2;
+    private TextField txtFieldNombreCliente2; //00103923 Declara el text field btnSalir10
     @FXML
-    private TextArea txtAreaDireccion1;
+    private TextArea txtAreaDireccion1; //00103923 Declara el text field btnSalir10
     @FXML
-    private TextField txtFieldTelefono1;
+    private TextField txtFieldTelefono1; //00103923 Declara el text field btnSalir10
     @FXML
-    private Button btnAgregar1;
+    private Button btnAgregar1; //00103923 Declara el boton btnSalir10
     @FXML
-    private Button btnSalir6;
-    private Alert error=new Alert(Alert.AlertType.ERROR);//00106423 Creamos un objeto Alert para mostrar posible errores
+    private Button btnSalir6; //00103923 Declara el boton btnSalir10
+    @FXML
+    private Alert error=new Alert(Alert.AlertType.ERROR);//00106423 Creamos un objeto Alert para mostrar posibles errores
 
     @FXML
-    public void agregarOnAction(ActionEvent event) {
+    public void agregarOnAction(ActionEvent event) { //00103923 Declara el metodo void agregarOnAction que recibe de parametros un event
 
         String SQL_query="insert into Clientes(NombreCompleto,Direccion,NumeroTelefono) values(?,?,?)";//00106423 Escribimos la query que agregara los clientes a la BD
         String NombreCompleto=txtFieldNombreCliente2.getText();//00106423 Guardamos en una variable el valor del textField que recibe el nombre completo del usuario
@@ -53,7 +52,7 @@ public class AgregarClienteController {
             }
             else{//00106423 Mostramos la ventana de exito si el cliente se agrego correctamente a la BD
                 ((Stage)btnAgregar1.getScene().getWindow()).close(); //00103923 Cierra escena actual
-                SceneManager.manageScene(event, "/org/example/parcialfinalpoo/operacion-exitosa.fxml");
+                SceneManager.manageScene(event, "/org/example/parcialfinalpoo/operacion-exitosa.fxml"); //00103923 Cambia la escena usando SceneManager
 
             }
         } catch (SQLException e) {//00106423 Si algo falla durante la ejecucion lanzamos una excepcion con el catch
@@ -62,8 +61,8 @@ public class AgregarClienteController {
 
     }
     @FXML
-    public void btnSalir6OnAction(ActionEvent event) {
-        ((Stage)btnSalir6.getScene().getWindow()).close();
-        SceneManager.manageScene(event, "/org/example/parcialfinalpoo/menu-empleado.fxml");
+    public void btnSalir6OnAction(ActionEvent event) { //00103923 Declara el metodo void btnSalir6OnAction que recibe de parametros un event
+        ((Stage)btnSalir6.getScene().getWindow()).close(); //00103923 Cierra escena actual
+        SceneManager.manageScene(event, "/org/example/parcialfinalpoo/menu-empleado.fxml"); //00103923 Cambia la escena usando SceneManager
     }
 }

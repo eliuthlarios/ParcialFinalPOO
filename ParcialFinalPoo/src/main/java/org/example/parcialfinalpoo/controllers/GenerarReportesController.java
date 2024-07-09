@@ -6,45 +6,45 @@ import javafx.scene.control.Button;
 import javafx.stage.Stage;
 import org.example.parcialfinalpoo.SceneManager;
 
-public class GenerarReportesController {
+public class GenerarReportesController { //00103923 Declara la clase GenerarReportesController
     @FXML
-    private Button btnReporteA;
+    private Button btnReporteA; //00103923 Declara el boton btnReporteA
     @FXML
-    private Button btnReporteB;
+    private Button btnReporteB; //00103923 Declara el boton btnReporteB
     @FXML
-    private Button btnReporteC;
+    private Button btnReporteC; //00103923 Declara el boton btnReporteC
     @FXML
-    private Button btnReporteD;
+    private Button btnReporteD; //00103923 Declara el boton btnReporteD
     @FXML
-    private Button btnSalir5;
+    private Button btnSalir5; //00103923 Declara el boton btnSalir5
 
     @FXML
-    public void btnReporteAOnAction(ActionEvent event) {
+    public void btnReporteAOnAction(ActionEvent event) { //00103923 Declara el metodo void btnReporteAOnAction que recibe de parametros un event
         ((Stage)btnReporteA.getScene().getWindow()).close(); //00103923 Cierra escena actual
-        SceneManager.manageScene(event, "/org/example/parcialfinalpoo/operacion-exitosa.fxml");
+        SceneManager.manageScene(event, "/org/example/parcialfinalpoo/operacion-exitosa.fxml"); //00103923 Cambia la escena usando SceneManager
     }
 
     @FXML
-    public void btnReporteBOnAction(ActionEvent event) {
+    public void btnReporteBOnAction(ActionEvent event) { //00103923 Declara el metodo void btnReporteBOnAction que recibe de parametros un event
         ((Stage)btnReporteA.getScene().getWindow()).close(); //00103923 Cierra escena actual
-        SceneManager.manageScene(event, "/org/example/parcialfinalpoo/operacion-exitosa.fxml");
+        SceneManager.manageScene(event, "/org/example/parcialfinalpoo/operacion-exitosa.fxml"); //00103923 Cambia la escena usando SceneManager
     }
 
     @FXML
-    public void btnReporteCOnAction(ActionEvent event) {
+    public void btnReporteCOnAction(ActionEvent event) { //00103923 Declara el metodo void btnReporteCOnAction que recibe de parametros un event
         ((Stage)btnReporteA.getScene().getWindow()).close(); //00103923 Cierra escena actual
-        SceneManager.manageScene(event, "/org/example/parcialfinalpoo/operacion-exitosa.fxml");
+        SceneManager.manageScene(event, "/org/example/parcialfinalpoo/operacion-exitosa.fxml"); //00103923 Cambia la escena usando SceneManager
     }
 
     @FXML
-    public void btnReporteDOnAction(ActionEvent event) {
+    public void btnReporteDOnAction(ActionEvent event) { //00103923 Declara el metodo void btnReporteDOnAction que recibe de parametros un event
         ((Stage)btnReporteA.getScene().getWindow()).close(); //00103923 Cierra escena actual
-        SceneManager.manageScene(event, "/org/example/parcialfinalpoo/operacion-exitosa.fxml");
+        SceneManager.manageScene(event, "/org/example/parcialfinalpoo/operacion-exitosa.fxml"); //00103923 Cambia la escena usando SceneManager
     }
 
     @FXML
-    public void btnSalir5OnAction(ActionEvent event) {
+    public void btnSalir5OnAction(ActionEvent event) { //00103923 Declara el metodo void btnSalir5OnAction que recibe de parametros un event
         ((Stage)btnReporteA.getScene().getWindow()).close(); //00103923 Cierra escena actual
-        SceneManager.manageScene(event, "/org/example/parcialfinalpoo/menu-empleado.fxml");
+        SceneManager.manageScene(event, "/org/example/parcialfinalpoo/menu-empleado.fxml"); //00103923 Cambia la escena usando SceneManager
     }
 }
