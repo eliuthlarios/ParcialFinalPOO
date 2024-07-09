@@ -23,7 +23,7 @@ public class ModDatosClienteController {
     @FXML
     public void btnSalir7OnAction(ActionEvent event) {
         ((Stage)btnSalir7.getScene().getWindow()).close(); //00103923 Cierra escena actual
-        SceneManager.manageScene(event, "/org/example/parcialfinalpoo/login.fxml");
+        SceneManager.manageScene(event, "/org/example/parcialfinalpoo/menu-empleado.fxml");
     }
 
     @FXML

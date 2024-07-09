@@ -45,6 +45,6 @@ public class GenerarReportesController {
     @FXML
     public void btnSalir5OnAction(ActionEvent event) {
         ((Stage)btnReporteA.getScene().getWindow()).close(); //00103923 Cierra escena actual
-        SceneManager.manageScene(event, "/org/example/parcialfinalpoo/login.fxml");
+        SceneManager.manageScene(event, "/org/example/parcialfinalpoo/menu-empleado.fxml");
     }
 }

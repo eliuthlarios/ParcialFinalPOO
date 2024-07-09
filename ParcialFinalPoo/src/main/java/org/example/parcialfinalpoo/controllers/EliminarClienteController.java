@@ -18,7 +18,7 @@ public class EliminarClienteController {
     @FXML
     public void btnSalir12OnAction(ActionEvent event) {
         ((Stage)btnSalir12.getScene().getWindow()).close();
-        SceneManager.manageScene(event, "/org/example/parcialfinalpoo/login.fxml");
+        SceneManager.manageScene(event, "/org/example/parcialfinalpoo/menu-empleado.fxml");
     }
 
     @FXML

@@ -26,6 +26,6 @@ public class EliminarTarjetaController {
     @FXML
     public void btnSalir11OnAction(ActionEvent event) {
         ((Stage)btnSalir11.getScene().getWindow()).close();
-        SceneManager.manageScene(event, "/org/example/parcialfinalpoo/login.fxml");
+        SceneManager.manageScene(event, "/org/example/parcialfinalpoo/menu-empleado.fxml");
     }
 }

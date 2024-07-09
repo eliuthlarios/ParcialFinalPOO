@@ -25,7 +25,7 @@ public class ModificarClienteController {
     @FXML
     public void btnSalir4OnAction(ActionEvent event) {
         ((Stage)btnSalir4.getScene().getWindow()).close(); //00103923 Cierra escena actual
-        SceneManager.manageScene(event, "/org/example/parcialfinalpoo/login.fxml");
+        SceneManager.manageScene(event, "/org/example/parcialfinalpoo/menu-empleado.fxml");
     }
 
     @FXML

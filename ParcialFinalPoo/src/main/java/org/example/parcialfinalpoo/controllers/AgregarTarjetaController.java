@@ -33,6 +33,6 @@ public class AgregarTarjetaController {
     @FXML
     public void btnSalir10OnAction(ActionEvent event) {
         ((Stage)btnSalir10.getScene().getWindow()).close();
-        SceneManager.manageScene(event, "/org/example/parcialfinalpoo/login.fxml");
+        SceneManager.manageScene(event, "/org/example/parcialfinalpoo/menu-empleado.fxml");
     }
 }

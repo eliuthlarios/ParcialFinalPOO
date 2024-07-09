@@ -32,6 +32,6 @@ public class AgregarClienteController {
     @FXML
     public void btnSalir6OnAction(ActionEvent event) {
         ((Stage)btnSalir6.getScene().getWindow()).close();
-        SceneManager.manageScene(event, "/org/example/parcialfinalpoo/login.fxml");
+        SceneManager.manageScene(event, "/org/example/parcialfinalpoo/menu-empleado.fxml");
     }
 }

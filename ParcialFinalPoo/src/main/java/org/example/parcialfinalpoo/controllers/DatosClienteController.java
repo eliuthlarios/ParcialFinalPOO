@@ -32,6 +32,6 @@ public class DatosClienteController {
     @FXML
     public void btnSalir8OnAction(ActionEvent event) {
         ((Stage)btnSalir8.getScene().getWindow()).close();
-        SceneManager.manageScene(event, "/org/example/parcialfinalpoo/login.fxml");
+        SceneManager.manageScene(event, "/org/example/parcialfinalpoo/menu-empleado.fxml");
     }
 }
