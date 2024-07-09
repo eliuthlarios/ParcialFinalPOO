@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="480.0" prefWidth="854.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.parcialfinalpoo.controllers.AgregarClienteController">
+<AnchorPane prefHeight="480.0" prefWidth="854.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.parcialfinalpoo.controllers.AgregarClienteController">
    <children>
       <BorderPane prefHeight="480.0" prefWidth="854.0">
          <center>
@@ -44,8 +44,8 @@
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="30.0">
                      <children>
-                        <Button fx:id="btnAgregar1" mnemonicParsing="false" prefHeight="50.0" prefWidth="100.0" text="Agregar" />
-                        <Button fx:id="btnSalir6" mnemonicParsing="false" prefHeight="50.0" prefWidth="100.0" text="Salir" />
+                        <Button fx:id="btnAgregar1" mnemonicParsing="false" onAction="#agregarOnAction" prefHeight="50.0" prefWidth="100.0" text="Agregar" />
+                        <Button fx:id="btnSalir6" mnemonicParsing="false" onAction="#btnSalir6OnAction" prefHeight="50.0" prefWidth="100.0" text="Salir" />
                      </children>
                   </HBox>
                </children>

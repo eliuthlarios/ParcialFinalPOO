@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="480.0" prefWidth="854.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.parcialfinalpoo.controllers.ModDatosClienteController">
+<AnchorPane prefHeight="480.0" prefWidth="854.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.parcialfinalpoo.controllers.ModDatosClienteController">
    <children>
       <BorderPane prefHeight="480.0" prefWidth="854.0">
          <center>
@@ -16,19 +16,19 @@
                      </font></Label>
                   <HBox alignment="CENTER" prefHeight="232.0" prefWidth="854.0" spacing="50.0">
                      <children>
-                        <Button fx:id="btnDatosClientes" mnemonicParsing="false" text="Datos del Cliente">
+                        <Button fx:id="btnDatosClientes" mnemonicParsing="false" onAction="#btnDatosClientesOnAction" text="Datos del Cliente">
                            <font>
                               <Font size="18.0" />
                            </font>
                         </Button>
-                        <Button fx:id="btnTarjetasClientes" mnemonicParsing="false" text="Tarjetas del Cliente">
+                        <Button fx:id="btnTarjetasClientes" mnemonicParsing="false" onAction="#btnTarjetasClientesOnAction" text="Tarjetas del Cliente">
                            <font>
                               <Font size="18.0" />
                            </font>
                         </Button>
                      </children>
                   </HBox>
-                  <Button fx:id="btnSalir7" mnemonicParsing="false" text="Salir">
+                  <Button fx:id="btnSalir7" mnemonicParsing="false" onAction="#btnSalir7OnAction" text="Salir">
                      <font>
                         <Font size="18.0" />
                      </font>

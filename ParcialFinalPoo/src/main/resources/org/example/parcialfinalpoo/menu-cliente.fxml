@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="480.0" prefWidth="854.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.parcialfinalpoo.controllers.MenuClienteController">
+<AnchorPane prefHeight="480.0" prefWidth="854.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.parcialfinalpoo.controllers.MenuClienteController">
     <children>
         <BorderPane prefHeight="480.0" prefWidth="854.0">
             <center>
@@ -49,12 +49,12 @@
                         </HBox>
                         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="50.0">
                             <children>
-                                <Button fx:id="btnAceptar1" mnemonicParsing="false" prefHeight="50.0" prefWidth="100.0" text="Aceptar">
+                                <Button fx:id="btnAceptar1" mnemonicParsing="false" onAction="#btnAceptarOnClick" prefHeight="50.0" prefWidth="100.0" text="Aceptar">
                                     <font>
                                         <Font size="18.0" />
                                     </font>
                                 </Button>
-                                <Button fx:id="btnSalir2" mnemonicParsing="false" prefHeight="50.0" prefWidth="100.0" text="Salir">
+                                <Button fx:id="btnSalir2" mnemonicParsing="false" onAction="#Salir2" prefHeight="50.0" prefWidth="100.0" text="Salir">
                                     <font>
                                         <Font size="18.0" />
                                     </font>
