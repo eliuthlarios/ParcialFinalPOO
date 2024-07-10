@@ -9,7 +9,6 @@ import javafx.scene.control.Button;
 import javafx.event.ActionEvent;
 import org.example.parcialfinalpoo.BDConection;
 import org.example.parcialfinalpoo.SceneManager;
-
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -48,17 +47,17 @@ public class MenuClienteController {
     //00029223 metodo para mostrar alerta
     private void mostrarAlerta(String titulo, String contenido, Alert.AlertType tipo) {
         Alert alert = new Alert(tipo); //00029223 crea la alerta segun el tipo
-        alert.setTitle(titulo); //00029223 establece el titulo
+        alert.setTitle(titulo); //00029223 establece el título
         alert.setContentText(contenido); //00029223 setea el contenido a mostrar
         alert.showAndWait(); //00029223 muestra y espera
     }
     @FXML
-    public void Salir2(ActionEvent event){
+    public void Salir2(ActionEvent event){ //00103923 Declara el metodo void Salir2 que recibe de parametros un event
         ((Stage)txtAreaDescripcion.getScene().getWindow()).close(); //00103923 Cierra escena actual
         SceneManager.manageScene(event, "/org/example/parcialfinalpoo/login.fxml"); //00029223 Cambia a la escena del login
     }
     @FXML
-    public void btnAceptarOnClick(ActionEvent event) throws IOException {
+    public void btnAceptarOnClick(ActionEvent event) throws IOException { //00103923 Declara el metodo void btnAceptarOnClick que recibe de parametros un event
         String numeroTarjeta = txtFieldNumeroTarjeta.getText(); //00029223 saca el texto del campo de la tarjeta
         String montoTransaccionStr = txtFieldMontoTransaccion.getText(); //00029223 saca el texto del campo del monto
         String descripcion = txtAreaDescripcion.getText(); //00029223 saca el texto de la descripcion
@@ -74,7 +73,7 @@ public class MenuClienteController {
             try {
                 insertarTransaccion(numeroTarjeta, montoTransaccion, descripcion); //00029223 inserta a la base de datos
                 mostrarAlerta("Nice", "Transaccion Realizada.", Alert.AlertType.INFORMATION); //00029223 muestra una alerta de exito
-                SceneManager.manageScene(event, "/org/example/parcialfinalpoo/operacion-exitosa.fxml"); //00029223 cambia a la escena de operación exitosa
+                SceneManager.manageScene(event, "/org/example/parcialfinalpoo/transaccion-exitosa.fxml"); //00029223 cambia a la escena de transaccion exitosa
             } catch (SQLException v ) {
                 mostrarAlerta("No se pudo realizar la transaccion", "" + v.getMessage(), Alert.AlertType.ERROR); //00029223 muestra el mensaje del try catch del PA
                 SceneManager.manageScene(event, "/org/example/parcialfinalpoo/operacion-noexitosa.fxml"); //00029223 cambia a la escena de operación no exitosa

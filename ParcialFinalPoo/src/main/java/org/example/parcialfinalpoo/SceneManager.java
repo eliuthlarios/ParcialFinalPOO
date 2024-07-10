@@ -6,13 +6,12 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-
 import java.io.IOException;
 
-public class SceneManager {
-    private String url;
+public class SceneManager { //00103923 Declara la clase SceneManager
+    private String url; //00103923 Declara una variable del tipo String llamada url
 
-    public static void manageScene(ActionEvent event, String url){
+    public static void manageScene(ActionEvent event, String url){ //00103923 Declara un metodo estatico llamado manageScene
         try { //00103923 Inicio del try
             FXMLLoader fxmlLoader = new FXMLLoader(SceneManager.class.getResource(url)); //00103923 Cargar el archivo FXML que se usa en la nueva escena
             Parent root = fxmlLoader.load(); //00103923 Cargar el contenido
