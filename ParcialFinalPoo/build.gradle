@@ -26,18 +26,19 @@ tasks.withType(JavaCompile) {
 
 application {
     mainModule = 'org.example.parcialfinalpoo'
-    mainClass = 'org.example.parcialfinalpoo.HelloApplication'
+    mainClass = 'org.example.parcialfinalpoo.LoginApplication'
 }
 
 javafx {
-    version = '17.0.6'
-    modules = ['javafx.controls', 'javafx.fxml']
+    version = '21.0.1'
+    modules = ['javafx.controls', 'javafx.fxml', 'javafx.swing', 'javafx.base','javafx.graphics','javafx.media']
 }
 
-dependencies {
 
+dependencies {
     testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
+    implementation 'com.microsoft.sqlserver:mssql-jdbc:12.6.3.jre11'
 }
 
 test {

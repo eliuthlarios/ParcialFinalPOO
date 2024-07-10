@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="480.0" prefWidth="854.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.parcialfinalpoo.controllers.ReporteDController">
+    <children>
+        <TextField fx:id="facilitador" layoutX="172.0" layoutY="58.0" promptText="Facilitador" />
+        <Button fx:id="buttonGenerarReporte" layoutX="507.0" layoutY="58.0" onAction="#generarReporte" text="Generar Reporte" />
+        <TextArea fx:id="txResultado" layoutX="50.0" layoutY="100.0" prefHeight="250.0" prefWidth="748.0" />
+        <Button fx:id="btnSalir" layoutX="422.0" layoutY="372.0" onAction="#btnSalirAction" text="Salir" />
+      <Label layoutX="366.0" layoutY="14.0" text="REPORTES D">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="105.0" layoutY="62.0" text="Facilitador:" />
+    </children>
+</AnchorPane>
