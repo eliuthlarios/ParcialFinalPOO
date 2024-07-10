@@ -21,25 +21,25 @@ public class GenerarReportesController {
     @FXML
     public void btnReporteAOnAction(ActionEvent event) {
         ((Stage)btnReporteA.getScene().getWindow()).close(); //00103923 Cierra escena actual
-        SceneManager.manageScene(event, "/org/example/parcialfinalpoo/operacion-exitosa.fxml");
+        SceneManager.manageScene(event, "/org/example/parcialfinalpoo/reporte-A.fxml"); //00029223 nueva direccion del fxml del reporte A
     }
 
     @FXML
     public void btnReporteBOnAction(ActionEvent event) {
         ((Stage)btnReporteA.getScene().getWindow()).close(); //00103923 Cierra escena actual
-        SceneManager.manageScene(event, "/org/example/parcialfinalpoo/operacion-exitosa.fxml");
+        SceneManager.manageScene(event, "/org/example/parcialfinalpoo/reporte-B.fxml"); //00029223 nueva direccion del fxml del reporte B
     }
 
     @FXML
     public void btnReporteCOnAction(ActionEvent event) {
         ((Stage)btnReporteA.getScene().getWindow()).close(); //00103923 Cierra escena actual
-        SceneManager.manageScene(event, "/org/example/parcialfinalpoo/operacion-exitosa.fxml");
+        SceneManager.manageScene(event, "/org/example/parcialfinalpoo/reporte-C.fxml"); //00029223 nueva direccion del fxml del reporte C
     }
 
     @FXML
     public void btnReporteDOnAction(ActionEvent event) {
         ((Stage)btnReporteA.getScene().getWindow()).close(); //00103923 Cierra escena actual
-        SceneManager.manageScene(event, "/org/example/parcialfinalpoo/operacion-exitosa.fxml");
+        SceneManager.manageScene(event, "/org/example/parcialfinalpoo/reporte-D.fxml"); //00029223 nueva direccion del fxml del reporte D
     }
 
     @FXML
